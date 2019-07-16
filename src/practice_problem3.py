@@ -464,20 +464,25 @@ def practice_problem3d(sequence):
     return -1
 
     ####################################################################
-    # TODO: 6. Just ABOVE this TODO, you should have implemented
+    # DONE: 6. Just ABOVE this DONE, you should have implemented
     #     a solution for the   practice_problem3d   function.
     #     Here, put ANOTHER solution, as follows:
     #
-    #       -- Your FIRST solution (ABOVE this TODO)
+    #       -- Your FIRST solution (ABOVE this DONE)
     #            should be a solution that IGNORES
     #              practice_problem3c (the previous problem).
     #
-    #       -- Your SECOND solution (BELOW this TODO)
+    #       -- Your SECOND solution (BELOW this DONE)
     #            should be a solution that USES (calls)
     #              practice_problem3c.
     #
     #          This solution should *** HAVE NO LOOP (no FOR). ***
     ####################################################################
+    indices = practice_problem3c(sequence)
+    if indices == []:
+        return -1
+    else:
+        return indices[0]
 
 
 def run_test_practice_problem3e():
