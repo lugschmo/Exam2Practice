@@ -42,8 +42,8 @@ def main():
     run_test_init()
     run_test_append_string()
     run_test_double()
-#     run_test_shrink()
-#     run_test_double_then_shrink()
+    run_test_shrink()
+    run_test_double_then_shrink()
 #     run_test_reset()
 #     run_test_steal()
 #     run_test_get_history()
@@ -259,7 +259,7 @@ class Box(object):
           :type new_volume: int
         """
         # --------------------------------------------------------------
-        # TODO: 5. Implement and test this function.
+        # DONE: 5. Implement and test this function.
         #     The testing code is already written for you (above).
         # --------------------------------------------------------------
         # --------------------------------------------------------------
@@ -270,6 +270,19 @@ class Box(object):
         # IMPORTANT: Write a solution to this problem in pseudo-code,
         # and THEN translate the pseudo-code to a solution.
         # --------------------------------------------------------------
+        contents = self.contents
+        self.volume = new_volume
+        if new_volume >= len(self.contents):
+            return ''
+        else:
+            self.contents = ''
+            s = ''
+            for k in range(len(contents)):
+                if k + 1 <= new_volume:
+                    self.contents = self.contents + contents[k]
+                else:
+                    s = s + contents[k]
+            return s
 
     def double_then_shrink(self, new_volume):
         """
@@ -315,7 +328,7 @@ class Box(object):
           :type new_volume: int
         """
         # --------------------------------------------------------------
-        # TODO: 6. Implement and test this function.
+        # DONE: 6. Implement and test this function.
         #     The testing code is already written for you (above).
         # --------------------------------------------------------------
         # --------------------------------------------------------------
@@ -323,6 +336,10 @@ class Box(object):
         #    DIFFICULTY:      5
         #    TIME ESTIMATE:   5 minutes.
         # --------------------------------------------------------------
+        double = self.double()
+        shrink = self.shrink(new_volume)
+        extra = double + shrink
+        return len(extra)
 
     def reset(self):
         """
