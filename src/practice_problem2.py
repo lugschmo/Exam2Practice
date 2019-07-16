@@ -2,8 +2,8 @@
 PRACTICE Test 2, practice_problem 2.
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Mitch Lugsch.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ########################################################################
 # Students:
@@ -42,7 +42,7 @@ def main():
 def run_test_practice_problem2a():
     """ Tests the   practice_problem2a  function. """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement this TEST function.
+    # DONE: 2. Implement this TEST function.
     #   It TESTS the  practice_problem2a  function defined below.
     #   Include at least **   4 reasonable   ** tests.
     #
@@ -55,6 +55,30 @@ def run_test_practice_problem2a():
     print('--------------------------------------------------')
     print('Testing the   practice_problem2a   function:')
     print('--------------------------------------------------')
+
+    # Test 1:
+    print('Test 1 of practice_problem2a:')
+    print('Expected:', [3, 4, 5, 6, 7])
+    print('Actual:  ', practice_problem2a([1, 2, 3, 4, 5], 2))
+    print()
+
+    # Test 2:
+    print('Test 2 of practice_problem2a:')
+    print('Expected:', [9800])
+    print('Actual:  ', practice_problem2a([9874], -74))
+    print()
+
+    # Test 3:
+    print('Test 3 of practice_problem2a:')
+    print('Expected:', [0, -14, 55])
+    print('Actual:  ', practice_problem2a([-10, -24, 45], 10))
+    print()
+
+    # Test 4:
+    print('Test 4 of practice_problem2a:')
+    print('Expected:', [4, -21, 5, -22])
+    print('Actual:  ', practice_problem2a([3, -22, 4, -23], 1))
+    print()
 
 
 def practice_problem2a(sequence, delta):
@@ -76,13 +100,16 @@ def practice_problem2a(sequence, delta):
       :type delta:    int
     """
     ####################################################################
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     ####################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   5 minutes.
     ####################################################################
+    for k in range(len(sequence)):
+        sequence[k] = sequence[k] + delta
+    return sequence
 
 
 def run_test_practice_problem2b():
